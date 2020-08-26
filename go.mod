@@ -1,4 +1,4 @@
-module egoutil
+module github.com/erh/egoutil
 
 go 1.14
 
