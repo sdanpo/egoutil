@@ -65,10 +65,7 @@ function evaluateTemplate(theTemplate, data, scope) {
         return evaluateTemplate_getField(data, theTemplate.ident)
 
     case "VariableNode":
-        if (theTemplate.ident.length != 1 ) {
-            throw "VariableNode wtf";
-        }
-        return scope[theTemplate.ident[0]];
+        return evaluateTemplate_getField(scope, theTemplate.ident)
         
     case "IfNode":
         var x = evaluateTemplate(theTemplate.pipe, data, scope);
