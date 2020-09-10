@@ -39,6 +39,20 @@ func (u *UserInfo) GetEmailVerified() bool {
 	return u.Properties["email_verified"].(bool)
 }
 
+func (u *UserInfo) GetBool(name string) bool {
+	v, found := u.Properties[name]
+	if !found {
+		return false
+	}
+
+	b, good := v.(bool)
+	if !good {
+		return false
+	}
+
+	return b
+}
+
 // ----
 
 type SimpleWebAppConfig struct {
